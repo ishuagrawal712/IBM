@@ -5,10 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
-public class Task {
-
+public class Task 
+{
 	public String taskId;
-
 	public ArrayList<Todo> list;
 	
 	{
@@ -16,7 +15,8 @@ public class Task {
 		list = new ArrayList<Todo>();
 	}
 
-	public void createTodo(Todo todo) {
+	public void createTodo(Todo todo)
+	{
 		list.add(todo);
 		System.out.println("todoAdded Successfully");
 	}
@@ -41,6 +41,7 @@ public class Task {
 		}
 		System.out.println(name+" not present in the list");
 	}
+	
 	public void update(String oldname,String newName)
 	{
 		Iterator<Todo> itr = list.iterator();
