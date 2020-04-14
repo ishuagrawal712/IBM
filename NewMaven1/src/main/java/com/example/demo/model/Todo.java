@@ -16,14 +16,14 @@ import lombok.ToString;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class ToDo
+public class Todo
 {
-	private String todoID;
-	private String todoName;
+	private String todoId;
+	private String name;
 
-	public ToDo(String todoName)
+	public Todo(String name)
 	{
-		this.todoID=UUID.randomUUID().toString();
-		this.todoName=todoName;
+		this.todoId=UUID.randomUUID().toString();
+		this.name=name;
 	}
 }
