@@ -4,37 +4,27 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MyConnectionFactory
-{
+public class MyConnectionFactory {
 
 	private static Connection connection;
 	private static MyConnectionFactory factory;
 
-	private MyConnectionFactory()
-	{
-		try
-		{
-			//DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+	private MyConnectionFactory() {
+		try {
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ibm", "root", "root123");
 
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public  Connection getMyConnection() throws SQLException
-	{
+	public  Connection getMyConnection() throws SQLException {
 		return connection;
 	}
-
-	public static MyConnectionFactory getConnectionObject()
-	{
-		if (factory == null)
-		{
+	public static MyConnectionFactory getConnectionObject() {
+		if (factory == null) {
 			factory = new MyConnectionFactory();
 		}
-		
 		return factory;
 	}
 
